@@ -1,34 +1,48 @@
-angular.module('mainApp', ['ui.router'])
+angular.module('mainApp', [])
+.config(function($stateProvider, $urlRouterProvider) {
 
-.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-
+  console.log('mainApp loaded');
+  
   $stateProvider
 
-//   .state('home', {
-//     url: '/',
-//     templateUrl: './views/home.html',
-//     onEnter: function($state) {
-//       $state.go('about');
-//     },
-//   })
-
-  .state('about', {
+  .state('home', {
     url: '/',
-    templateUrl: './views/about.html'
+    templateUrl: './views/home.html',
+    // data: {
+    //   css: '../css/style.css'
+    // }
   })
 
-  .state('work', {
-    url: '/work',
-    templateUrl: './views/work.html'
+  .state('products', {
+    abstract: true,
+    url: '/products',
+    templateUrl: './views/products.html'
   })
 
-  .state('404', {
-    url: '/404',
-    templateUrl: './views/404.html'
+  .state('account', {
+    url: '/account',
+    templateUrl: './views/account.html'
+  })
+
+  .state('cart', {
+    url: '/cart',
+    templateUrl: './views/cart.html',
+    // data: {
+    //   css: '../css/style.css'
+    // }
+  })
+
+  .state('productsAll', {
+    url: '/',
+    templateUrl: './views/products/allProducts.html',
+    parent: 'products'
+  })
+
+  .state('products.description', {
+    url: '/products/some',
+    templateUrl: './views/products/someProducts.html'
   });
 
-  $urlRouterProvider.otherwise('404');
-
-  $locationProvider.html5Mode(true);
+  $urlRouterProvider.otherwise('/');
 
 });
