@@ -18,7 +18,12 @@
   },
   "homepage": "https://github.com/AlanAdamson/codedimage#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect": "^3.5.0",
+    "cors": "^2.8.1",
     "express": "^4.14.0",
+    "massive": "^2.5.0",
+    "nodemon": "^1.11.0",
     "jquery": "^3.1.1",
     "ui-router-core": "2.0.0",
     "ejs": "~2.5.5"
