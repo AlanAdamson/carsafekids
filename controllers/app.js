@@ -1,8 +1,9 @@
 angular.module('mainApp', [])
-.config(function($stateProvider, $urlRouterProvider) {
+
+.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   console.log('mainApp loaded');
-  
+
   $stateProvider
 
   .state('home', {
@@ -43,6 +44,10 @@ angular.module('mainApp', [])
     templateUrl: './views/products/someProducts.html'
   });
 
-  $urlRouterProvider.otherwise('/');
+
+
+  $urlRouterProvider.otherwise('404');
+
+  $locationProvider.html5Mode(true);
 
 });
