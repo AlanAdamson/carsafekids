@@ -2,8 +2,6 @@ angular.module('mainApp', ['ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  console.log('mainApp loaded');
-
   $stateProvider
 
   .state('home', {
