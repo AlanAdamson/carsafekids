@@ -1,3 +1,4 @@
+angular.module('mainApp').controller('productsCtrl', function($scope, mainService){
 var app = require('../server.js');
 var db = app.get('db');
 
